@@ -35,4 +35,5 @@ The following image will also appear in the new window:
 These are the results of UDP package processing by the Splitter model. Each circle represents a LED. A group of circles is a node (only primary board is supported). Each row of groups represents a Splitter. And a column is a Splitter port output. 
 
 4. Test function loops test scenarios: R,G,B pure colors applied all LEDs, all white, all off, gradual fading for each port.
+
 ![diagram](tests.gif)
