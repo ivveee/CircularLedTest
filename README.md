@@ -11,7 +11,7 @@ I based the design of the prototype on the recommendations from the task descrip
 
 2. Power calculations are pretty straightforward. I propose three 24 V 150 Watt drivers, that might sound as an overkill, but as we are building a prototype we could use extra power. Something like Mean Well HLG-150H-24A would be ok.
 
-3. Testing program is a Python script in this repository. As the task included a very detailed description of timing, I decided to add timing management capabilities. For testing purposes I added simple LED and Splitter simulation module and graphical output.
+3. Python script in this repository is a testing program. As the task included a very detailed description of timing requirements, I added the scheduling management capability. For testing purposes I added some simple LED and Splitter simulations and the graphical output.
 
 To run the script you need `Python 3.10` installed. Once you have cloned current repository to your local machine please install `Pipenv`
 ```
