@@ -3,7 +3,7 @@
 This is a repository storing the results of homework by Ivan Bichenko that is a part of candidate selection process for Creative Technologist position at JBS.
 
 The task has 4 parts.
-1. Connection diagram for low current wiring and power supply are found in file [Prototype Design.pdf](Prototype Design.pdf).
+1. Connection diagram for low current wiring and power supply are found in file `Prototype Design.pdf` and below.
 I based the design of the prototype on the recommendations from the task description. 3 splitters should provide 25 fps update rate. Control and power drivers are separated for more convenient hardware debugging. But in real life the configuration of test stand is usually based on the equipment available.
 
 ![diagram](Diagram.JPG)
