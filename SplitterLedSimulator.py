@@ -8,6 +8,9 @@ from SplitterVentilator import SplitterStream
 
 
 class SplitterLedSimulator:
+    """Dirtily simulates the Splitter and LED node
+    draws led circles on GUI and updates them
+    """
 
     def __init__(self, sps: SplitterStream, app: App) -> None:
         super().__init__()
@@ -34,12 +37,12 @@ class SplitterLedSimulator:
                 coeff = color[3]/255
                 fill = self.app.window.rgbtohex( int(coeff*color[0]), int(coeff*color[1]), int(coeff*color[2]))
                 if code in self.app.window.circles:
-                    self.fills[code]=fill
+                    self.fills[code] = fill
                 else:
                     x = 100 + int(i % 10) * 15 + splitter_header[4] * 200
                     y = (self.sps.id + 0.5) * 150 + int(i / 10) * 10
                     self.app.window.circles[code] = self.app.window.create_circle(x, y, 5, fill=fill)
-                    self.fills[code]=fill
+                    self.fills[code] = fill
 
     async def update(self):
         for pairs in self.fills.items():

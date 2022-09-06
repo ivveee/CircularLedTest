@@ -21,6 +21,19 @@ class SplitterStream:
 
 
 class SplitterVentilator:
+    """Performs timed data package transmission according to strategy
+    Port 0  Splitter 0
+    Port 0  Splitter 1
+    ...
+    Port 0  Splitter n
+    Port 1  Splitter 0
+    Port 1  Splitter 1
+    ...
+    Port 1  Splitter n
+    Port n  Splitter n
+    Update package (04)
+    Port 0  Splitter 0
+    """
 
     def __init__(self) -> None:
         super().__init__()
@@ -43,8 +56,6 @@ class SplitterVentilator:
                 max_len = len(packet)
             await sps.stream.send(packet)
         await asyncio.sleep(10 / 500000 * max_len + 0.0005)
-        # await asyncio.sleep(1)
-
         # 10/(500000)*(437+36) = 0.0095
 
     async def run_in_loop(self, loops: float = float('inf')):

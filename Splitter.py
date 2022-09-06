@@ -5,6 +5,10 @@ from LEDNode import LEDNode
 
 
 class Splitter:
+    """RS-485 Splitter Storage service
+    Stores LED Nodes structures
+    Provides unctions for storage structure forming
+    """
     encode_header_format = 'uint:8 = package_type, \
                             uint:8 = format, \
                             uint:1 = flags, \

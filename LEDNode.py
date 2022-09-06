@@ -2,6 +2,9 @@ import bitstring
 
 
 class RGBW:
+    """A wrapper for color storage structure
+    """
+
     encode_format = '4*uint:8'
 
     def __init__(self, r=255, g=255, b=255, w=255) -> None:
@@ -21,6 +24,10 @@ class RGBW:
 
 
 class LEDNode:
+    """A wrapper for LED Node storage structure
+    Performs pixel operations before transmission
+    Provides unctions for storage structure forming
+    """
     num_of_LED = 108
     encode_header_format = 'uint:8 = break, \
                             uint:8 = zeroes, \
