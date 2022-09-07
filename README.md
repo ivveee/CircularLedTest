@@ -34,7 +34,14 @@ The following image will also appear in the new window:
 ![diagram](Window.JPG)
 These are the results of UDP package processing by the Splitter model. Each circle represents a LED. A group of circles is a node (only primary board is supported). Each row of groups represents a Splitter. And a column is a Splitter port output. 
 
-4. Test function loops test scenarios: R,G,B pure colors applied all LEDs, all white, all off, gradual fading for each port.
+4. Test function loops test scenarios: R,G,B pure colors applied all LEDs, all white, all off, gradual fading for each port. 
+
+Test plan would be: 
+- check if all LED panels are showing uniform pure colors in a dark environment.
+- the same with white, mixed colors and switched off
+- test color-to-white gradient transition with and without smoothing.
+- test color-to-black (switched off) transition. Detect when the LEDs begin to flicker
+- (not implemented in script) check addressing by showing a pre-defined image like circles
 
 ![diagram](tests.gif)
 
