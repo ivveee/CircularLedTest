@@ -7,6 +7,8 @@ Runs tests on simulation
 """
 
 import asyncio
+from typing import List
+
 import asyncio_dgram
 from LEDNode import LEDNode
 from LEDOutput import App
@@ -51,6 +53,17 @@ async def set_color(ventilator: SplitterVentilator, r, g, b, w):
         for data in sps.splitter.port_data_map:
             data.set_all_pixels_primary(r, g, b, w)
             data.set_all_pixels_secondary(r, g, b, w)
+
+
+async def list_map(ventilator: SplitterVentilator, list: List):
+    """Mapping function from the task description
+    """
+    i = 0
+    for sps in ventilator.sps.values():
+        for data in sps.splitter.port_data_map:
+            data.set_all_pixels_primary(list[i][0], list[i][1], list[i][2], list[i][3])
+            data.set_all_pixels_secondary(list[i][0], list[i][1], list[i][2], list[i][3])
+            i += 1
 
 
 async def entry_point():
@@ -107,6 +120,7 @@ async def entry_point():
                     await asyncio.sleep(0.01)
 
     await asyncio.gather(gui.exec(), ventilator.run_in_loop(), action_code(), *loops, switch_color())
+
 
 if __name__ == "__main__":
     asyncio.run(entry_point())
